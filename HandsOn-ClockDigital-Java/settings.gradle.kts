@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "POOENCAPSULAMENTO"
+rootProject.name = "ClockDigital"
 include(":app")
+ 

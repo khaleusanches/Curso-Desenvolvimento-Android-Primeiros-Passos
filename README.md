@@ -10,8 +10,8 @@ Aplicativo feito para demonstrar visualmente dados de 1 livro em especifico, uti
 - [x] Em Java.
 - [x] Em Kotlin.
 
-- APP 2 -> Clock Digital V1
-Aplicativo utilizando de componentes nativos do android. Com a funcionalidade de que ao usuário apertar um botão da tela, o aplicativo salvar a hora do click e então exibi-lá na tela inicial, mostrando se está a noite ou de dia, com as siglas PM ou AM respectivamente.
+- APP 2 -> Clock Digital
+Aplicativo utilizando de componentes nativos do android. Com a funcionalidade de exibir a hora atual em 2 formatos e ao usuário apertar um botão da tela, o aplicativo salvar a hora do click e então exibi-lá na tela inicial, mostrando se está a noite ou de dia, com as siglas PM ou AM respectivamente.
 - [ ] Em Java
 - [ ] Em Kotlin
 
@@ -25,6 +25,9 @@ APP 1 | Versão em *Java* finalizada. Dando inicio ao desenvolvimento do app em 
 
 #### 27/07 - 13:27
 APP 1 | Versão em *Kotlin* finalizada. Dando inicio ao desenvolvimento do APP 2.
+
+#### 27/07 - 14:18
+APP 2 | Versão em *Java*. Iniciado o desenvolvimento do layout do aplicativo.
 
 ## ANOTAÇÕES
 
