@@ -5,6 +5,7 @@ public class Livro {
     private String autor;
     private String editora;
     private int paginas;
+    private String paginas2;
     private String localizacao;
 
     public String getTitulo() {
@@ -31,8 +32,9 @@ public class Livro {
         this.editora = editora;
     }
 
-    public int getPaginas() {
-        return paginas;
+    public String getPaginas() {
+        paginas2 = String.valueOf(paginas);
+        return paginas2;
     }
 
     public void setPaginas(int paginas) {
