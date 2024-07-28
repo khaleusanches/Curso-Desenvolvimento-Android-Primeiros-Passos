@@ -29,5 +29,9 @@ APP 1 | Versão em *Kotlin* finalizada. Dando inicio ao desenvolvimento do APP 2
 #### 27/07 - 14:18
 APP 2 | Versão em *Java*. Iniciado o desenvolvimento do layout do aplicativo.
 
+#### 28/07 - 20:45
+APP 2 | Finalizada versão em *Java*. Iniciada a versão em Kotlin do projeto relógio. Por enquanto nada novo para se anotar.
+* **Não fiz muita coisa hoje, e vai ter uma mudança no horário de estudos, visto que terá a volta as aulas no período da manhã e o curso técnico de tarde.*
+
 ## ANOTAÇÕES
 
