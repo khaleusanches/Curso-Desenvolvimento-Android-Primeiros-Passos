@@ -33,5 +33,8 @@ APP 2 | Versão em *Java*. Iniciado o desenvolvimento do layout do aplicativo.
 APP 2 | Finalizada versão em *Java*. Iniciada a versão em Kotlin do projeto relógio. Por enquanto nada novo para se anotar.
 * **Não fiz muita coisa hoje, e vai ter uma mudança no horário de estudos, visto que terá a volta as aulas no período da manhã e o curso técnico de tarde.*
 
+#### 28/07 - 21:07
+APP 2 | Finalizada versão em *Kotlin*. Por enquanto nada novo para se anotar.
+
 ## ANOTAÇÕES
 
