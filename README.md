@@ -36,5 +36,47 @@ APP 2 | Finalizada versão em *Java*. Iniciada a versão em Kotlin do projeto re
 #### 28/07 - 21:07
 APP 2 | Finalizada versão em *Kotlin*. Por enquanto nada novo para se anotar.
 
-## ANOTAÇÕES
+#### 30/07 - 18:33
+Iniciado app de cadastro em *Kotlin*. A ideia é um app de cadastro simples que já foi implementado. Portanto, a nova tarefa é adicionar um sistema para salvar as informações por meio de "sharedreferences".<br>
+(Pelo que olhei na documentação do android, isso não é mais usado, porém estou seguindo o curso, após o término, buscarei me atualizar sobre as novas tecnologias usadas para desenvolver.)<br>
 
+Também já foi implementada, porém é necessário estudar mais sobre, e ainda vai ocorrer a implementação de um sistema para visualizar o que foi salvo, ao menos para edição.
+
+
+## ANOTAÇÕES
+#### 30/07 - 18:56 - SISTEMA DE CADASTRO SIMPLES
+**SharedPreferences (NÃO É MAIS USADO, MAS NO CURSO USA)** -> Tipo de arquivo para armazenar dados simples e temporarios no android.<br>
+Minha primeira duvida foi referente a como funciona o código 
+```
+    var preferences : SharedPreferences? = null;
+    companion object{
+        private final val NOME_PREFENCES : String = "pref_lista";
+    }
+    var listaVip : SharedPreferences.Editor? = null;
+```
+**COMPANION OBJECT ->** pelo que pesquisei é oq se aproxima de algo static. <br>
+```
+        preferences = getSharedPreferences(NOME_PREFENCES, 0);
+        listaVip = preferences!!.edit();
+```
+<br>
+
+Pelo que entendi "getSharedPreferences" é um objeto filho da classe "SharedPreferences". <br>
+**"NOME_PREFERENCES"** puxa de uma constante o nome que será o arquivo SharedPreferences.<br>
+**"0"** o professor disse que significa que vai poder ser lido e editado, queria saber quais numeros definem oq só pode ser lido ou que só pode ser editado.<br><br>
+**listaVip ->** vejo apenas como uma ferramente de edição. literalmente definida pelo objeto que quero editar e chamando a função edit. <br>
+Com isso da para colocar(put) coisas dentro, como por exemplo strings, e dps salvar com .apply();
+<br>
+```
+        listaVip!!.putString("nome", user!!.name);
+        listaVip!!.apply();
+```
+<br>
+
+
+
+
+
+
+
+        
