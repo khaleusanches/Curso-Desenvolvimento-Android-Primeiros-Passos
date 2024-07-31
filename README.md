@@ -42,6 +42,9 @@ Iniciado app de cadastro em *Kotlin*. A ideia é um app de cadastro simples que 
 
 Também já foi implementada, porém é necessário estudar mais sobre, e ainda vai ocorrer a implementação de um sistema para visualizar o que foi salvo, ao menos para edição.
 
+#### 31/07 - 06:06
+Aplicativo agora consegue exibir a informação já salva anteriormente. Utilizando **SHAREDPREFERENCES**.
+
 
 ## ANOTAÇÕES
 #### 30/07 - 18:56 - SISTEMA DE CADASTRO SIMPLES
@@ -71,6 +74,10 @@ Com isso da para colocar(put) coisas dentro, como por exemplo strings, e dps sal
         listaVip!!.putString("nome", user!!.name);
         listaVip!!.apply();
 ```
+Para pegar a informação de dentro do arquivo.
+
+        tb_name!!.setText(preferences!!.getString("nome", ""));
+
 <br>
 
 

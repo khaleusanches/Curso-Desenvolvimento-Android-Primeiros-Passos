@@ -25,14 +25,12 @@ class MainActivity : AppCompatActivity() {
     var pessoa_controller = PessoaController();
     var preferences : SharedPreferences? = null;
     companion object{
-        private final val NOME_PREFENCES : String = "pref_lista";
+        val preferences: SharedPreferences? = null;
+        final val NOME_PREFENCES : String = "pref_lista";
     }
-    var listaVip : SharedPreferences.Editor? = null;
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         preferences = getSharedPreferences(NOME_PREFENCES, 0);
-        listaVip = preferences!!.edit();
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -48,14 +46,11 @@ class MainActivity : AppCompatActivity() {
         tb_password = findViewById(R.id.tb_password);
         tb_email = findViewById(R.id.tb_email);
         btn_save = findViewById(R.id.btn_save);
-
-
+        tb_name!!.setText(preferences!!.getString("nome", ""));
     }
 
     fun cadastrarPessoa(view: View) {
         user = Pessoa(tb_name!!.text.toString(), tb_password!!.text.toString(), tb_email!!.text.toString());
-        listaVip!!.putString("nome", user!!.name);
-        listaVip!!.apply();
         pessoa_controller.salvar(user!!);
        // tb_name!!.text = null;
     }
