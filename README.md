@@ -45,6 +45,9 @@ Também já foi implementada, porém é necessário estudar mais sobre, e ainda 
 #### 31/07 - 06:06
 Aplicativo agora consegue exibir a informação já salva anteriormente. Utilizando **SHAREDPREFERENCES**.
 
+#### 27/08 - 10:35
+Melhoramento do app anterior. Aprendendo a fazer um botão que exibe uma lista de opções.
+
 
 ## ANOTAÇÕES
 #### 30/07 - 18:56 - SISTEMA DE CADASTRO SIMPLES
@@ -80,9 +83,18 @@ Para pegar a informação de dentro do arquivo.
 
 <br>
 
+#### 27/08 - 10:35 - SPINNER
+```
+        var spn_cursos : Spinner = findViewById(R.id.spn_cursos);
 
-
-
+        var lista_cursos : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, cursoController.getNomesCursos())
+        lista_cursos.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spn_cursos.adapter = lista_cursos;
+```
+**ArrayAdapter< String >** Necessario usar, pois é um componente de exibição de array.<br>
+**lista_cursos.setDropDownViewResource()** Como será a exibição.<br>
+**spn_cursos.adapter = lista_cursos;** define que o spinner vai exibir o ArrayAdapter.
+ 
 
 
 
