@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AppGasolinaEtanol</string>
+    <string name="title_main">Gasolina X Etanol</string>
+    <string name="et_etanol">R$ Litro/Etanol</string>
+    <string name="et_gasolina">R$ Litro/Gasolina</string>
+    <string name="btn_limpar">LIMPAR</string>
+    <string name="btn_salvar">SALVAR</string>
+    <string name="btn_finalizar">FINALIZAR</string>
+</resources>

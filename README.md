@@ -7,7 +7,7 @@ Repositório para documentar o aprendizado e projetos realizados durante o curso
 
 - APP 1 -> Entendendo Encapsulamento
 Aplicativo feito para demonstrar visualmente dados de 1 livro em especifico, utilizando conceitos de encapsulamento, assim aprendendo a usar de getters e setters tanto em Java quanto em Kotlin.
-- [x] Em Java.
+- [x] Em Java
 - [x] Em Kotlin.
 
 - APP 2 -> Clock Digital
