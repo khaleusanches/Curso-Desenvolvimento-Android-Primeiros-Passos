@@ -26,10 +26,7 @@ class MainActivity : AppCompatActivity() {
     var tb_email : EditText? = null
     var btn_save : Button? = null
     var user : Pessoa? = null
-
-
     var cursoController = CursoController();
-
     var pessoa_controller = PessoaController();
     var preferences : SharedPreferences? = null;
     companion object{
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         preferences = getSharedPreferences(NOME_PREFENCES, 0);
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_spinner)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -57,8 +54,7 @@ class MainActivity : AppCompatActivity() {
         var spn_cursos : Spinner = findViewById(R.id.spn_cursos);
         var lista_cursos : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, cursoController.getNomesCursos())
         lista_cursos.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spn_cursos.adapter = lista_cursos
-
+        spn_cursos.adapter = lista_cursos;
         tb_name!!.setText(preferences!!.getString("nome", ""));
     }
     fun cadastrarPessoa(view: View) {
