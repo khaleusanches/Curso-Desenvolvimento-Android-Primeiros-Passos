@@ -28,9 +28,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcularGasolinaEtanol(view: View){
-        var etanol = binding.etEtanol.text.toString().toInt()
-        var gasolina = binding.etGasolina.text.toString().toInt()
-        var conta = calculadoraController.result(etanol, gasolina);
-        binding.txtResult.text = conta.toString()
+        var etanol = binding.etEtanol.text.toString()
+        var gasolina = binding.etGasolina.text.toString()
+        if (etanol.isEmpty() || gasolina.isEmpty() ){
+            return
+        }
+        else{
+            var conta = calculadoraController.result(etanol.toInt(), gasolina.toInt());
+            binding.txtResult.text = conta.toString()
+        }
+    }
+
+    fun limparCampos(view: View) {
+        binding.etGasolina.setText("");
+        binding.etEtanol.setText("");
     }
 }
