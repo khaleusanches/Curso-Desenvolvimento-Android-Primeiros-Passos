@@ -12,8 +12,10 @@ Aplicativo feito para demonstrar visualmente dados de 1 livro em especifico, uti
 
 - APP 2 -> Clock Digital
 Aplicativo utilizando de componentes nativos do android. Com a funcionalidade de exibir a hora atual em 2 formatos e ao usuário apertar um botão da tela, o aplicativo salvar a hora do click e então exibi-lá na tela inicial, mostrando se está a noite ou de dia, com as siglas PM ou AM respectivamente.
-- [ ] Em Java
-- [ ] Em Kotlin
+- [x] Em Java
+- [x] Em Kotlin
+
+- APP 3 -> Localização atual do celular.
 
 
 ## :scroll:
@@ -48,6 +50,8 @@ Aplicativo agora consegue exibir a informação já salva anteriormente. Utiliza
 #### 27/08 - 10:35
 Melhoramento do app anterior. Aprendendo a fazer um botão que exibe uma lista de opções.
 
+#### 30/08 - 12:02
+Criação do app para ver a localização atual do celular -  EM KOTLIN.
 
 ## ANOTAÇÕES
 #### 30/07 - 18:56 - SISTEMA DE CADASTRO SIMPLES
@@ -95,7 +99,27 @@ Para pegar a informação de dentro do arquivo.
 **lista_cursos.setDropDownViewResource()** Como será a exibição.<br>
 **spn_cursos.adapter = lista_cursos;** define que o spinner vai exibir o ArrayAdapter.
  
+#### 30/08 - 12:02 - Binding e GPS
 
+```
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+```
+Definido no Manifest, define que o app usará essas permissões
 
+```
+        lateinit var locationManager : LocationManager;
+        locationManager = application.getSystemService(LOCATION_SERVICE) as LocationManager;
 
+        gps_ativo = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+```
+faz com que locationManager use os metodos nativos do android para verificar se o gps está ativo ou não
+
+```
+    buildFeatures {
+        viewBinding = true
+    }
+```
+para ativar o binding no projeto
         
