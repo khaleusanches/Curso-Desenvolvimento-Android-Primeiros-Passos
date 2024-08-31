@@ -2,9 +2,13 @@ package com.example.appgeradorqrcode
 
 import android.location.LocationManager
 import android.os.Bundle
+import android.Manifest;
+import android.content.pm.PackageManager
 import android.telephony.CarrierConfigManager.Gps
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.appgeradorqrcode.databinding.ActivityMainBinding
@@ -15,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     var longitude : Double = 0.0;
     var gps_ativo : Boolean = false;
     lateinit var binding : ActivityMainBinding;
-
+    var teste = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+    val APP_PERMISSOES_ID = 2021
     lateinit var locationManager : LocationManager;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,17 +47,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obterCordenadas() {
-        var permissao_ativa = true;
+        var permissao_ativa = solicitarPermissao();
         if(permissao_ativa){
             capturarLocalizacao();
         }
-        else{
-            solicitarPermissao();
-        }
     }
 
-    private fun solicitarPermissao() {
+    private fun solicitarPermissao() : Boolean{
+        var permissoesNegadas : MutableList<String> = mutableListOf()
+        var permissao = 0;
+        teste.forEach {
+            permissao = ContextCompat.checkSelfPermission(this, it);
+            if(permissao != PackageManager.PERMISSION_GRANTED){
+                permissoesNegadas.add(it)
+            }
+        }
 
+        if(permissoesNegadas.isEmpty()){
+            return true
+        }
+        else{
+            val permissoesArray = permissoesNegadas.toTypedArray() // Converte lista para array
+            ActivityCompat.requestPermissions(this, permissoesArray, APP_PERMISSOES_ID)
+            return false
+        }
     }
 
     private fun capturarLocalizacao() {
