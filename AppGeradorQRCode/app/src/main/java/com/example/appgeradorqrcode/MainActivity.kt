@@ -3,7 +3,10 @@ package com.example.appgeradorqrcode
 import android.location.LocationManager
 import android.os.Bundle
 import android.Manifest;
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.icu.text.DecimalFormat
+import android.location.Location
 import android.telephony.CarrierConfigManager.Gps
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -73,10 +76,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private fun capturarLocalizacao() {
-        latitude = 1.23;
-        longitude = -50.2;
-        binding.tvNumberLatitude.text = latitude.toString();
-        binding.tvNumberLongitude.text = longitude.toString()
+        var location : Location? = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+        var decimal : DecimalFormat = DecimalFormat("#.######")
+        if (location != null){
+            latitude = location.latitude
+            longitude = location.longitude
+        }
+
+        binding.tvNumberLatitude.text = decimal.format(latitude).toString();
+        binding.tvNumberLongitude.text = decimal.format(longitude).toString();
     }
 }

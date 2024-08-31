@@ -74,4 +74,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
         app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@android:mipmap/sym_def_app_icon" />
+
+    <org.osmdroid.views.MapView android:id="@+id/map"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
